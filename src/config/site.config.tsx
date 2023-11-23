@@ -26,15 +26,15 @@ export const metaObject = (
   description: string = siteConfig.description
 ): Metadata => {
   return {
-    title: title ? `${title} - Isomorphic Furyroad` : siteConfig.title,
+    title: title ? `${title} - Soul AI` : siteConfig.title,
     description,
     openGraph: openGraph ?? {
-      title: title ? `${title} - Isomorphic Furyroad` : title,
+      title: title ? `${title} - Soul AI` : title,
       description,
-      url: 'https://isomorphic-furyroad.vercel.app',
-      siteName: 'Isomorphic Furyroad', // https://developers.google.com/search/docs/appearance/site-names
+      url: 'https://www.soulhq.ai/',
+      siteName: 'Soul AI', // https://developers.google.com/search/docs/appearance/site-names
       images: {
-        url: 'https://s3.amazonaws.com/redqteam.com/isomorphic-furyroad/itemdep/isobanner.png',
+        url: 'https://www.soulhq.ai/assets/soul-ui-logo.webp',
         width: 1200,
         height: 630,
       },

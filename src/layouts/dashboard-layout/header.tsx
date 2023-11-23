@@ -15,7 +15,6 @@ import cn from '@/utils/class-names';
 import Logo from '@/components/logo';
 import { useIsMounted } from '@/hooks/use-is-mounted';
 import { useWindowScroll } from '@/hooks/use-window-scroll';
-import SettingsButton from '@/components/settings/settings-button';
 
 function HeaderMenuRight() {
   return (
@@ -50,7 +49,6 @@ function HeaderMenuRight() {
           />
         </ActionIcon>
       </NotificationDropdown>
-      <SettingsButton />
       <ProfileMenu />
     </div>
   );

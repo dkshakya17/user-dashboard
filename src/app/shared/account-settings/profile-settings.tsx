@@ -79,7 +79,7 @@ export default function ProfileSettingsView() {
                 >
                   <Input
                     className="col-span-full"
-                    prefix="https://redq.io/"
+                    prefix="#"
                     placeholder="First Name"
                     prefixClassName="relative pe-2.5 before:w-[1px] before:h-[38px] before:absolute before:bg-gray-300 before:-top-[9px] before:right-0"
                     {...register('username')}
