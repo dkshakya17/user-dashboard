@@ -52,7 +52,7 @@ export const messages = {
   placeTypeIsRequired: 'Place type is required',
   amenitiesAreRequired: 'Amenities are required',
   thisFieldIsRequired: 'This Field is required',
-  propertyNameIsRequired: 'Property name is required',
+  propertyNameIsRequired: 'Name is required',
   snippetNameIsRequired: 'Snippet name is required',
   snippetDirIsRequired: 'You must have to select a snippet folder',
   templateNameIsRequired: 'Template name is required',

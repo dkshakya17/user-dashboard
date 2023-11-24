@@ -1,5 +1,5 @@
-import AuthWrapper from '@/app/shared/auth-layout/auth-wrapper';
-import SignUpForm from './sign-up-form';
+import MultiStepForm from '@/app/shared/multi-step/steps';
+import AuthWrapperSignUp from '@/app/shared/auth-layout/auth-wappper-signup';
 import { metaObject } from '@/config/site.config';
 
 export const metadata = {
@@ -8,11 +8,8 @@ export const metadata = {
 
 export default function SignUpPage() {
   return (
-    <AuthWrapper
-      title="Join us today! Get special benefits and stay up-to-date."
-      isSocialLoginActive={true}
-    >
-      <SignUpForm />
-    </AuthWrapper>
+    <AuthWrapperSignUp title="Join us today!" isSocialLoginActive={true}>
+      <MultiStepForm />
+    </AuthWrapperSignUp>
   );
 }

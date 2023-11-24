@@ -2,13 +2,17 @@
 
 import cn from '@/utils/class-names';
 import { Button } from '@/components/ui/button';
-import { useStepperTwo } from '@/app/shared/multi-step/multi-step-2';
-
+import {
+  useStepperTwo,
+  stepTwoTotalSteps,
+} from '@/app/shared/multi-step/steps';
+import StepCounter from '@/app/shared/multi-step/step-counter';
 interface FooterProps {
   className?: string;
 }
 
 export default function Footer({ className }: FooterProps) {
+  const { step } = useStepperTwo();
   const { gotoPrevStep } = useStepperTwo();
   return (
     <footer
@@ -17,6 +21,7 @@ export default function Footer({ className }: FooterProps) {
         className
       )}
     >
+      <StepCounter currentStep={step + 1} totalSteps={stepTwoTotalSteps} />
       <Button onClick={gotoPrevStep} variant="outline" className="!w-[unset]">
         Back
       </Button>
