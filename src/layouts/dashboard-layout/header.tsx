@@ -15,11 +15,12 @@ import cn from '@/utils/class-names';
 import Logo from '@/components/logo';
 import { useIsMounted } from '@/hooks/use-is-mounted';
 import { useWindowScroll } from '@/hooks/use-window-scroll';
+import ThemeSwitcher from '../theme-switcher';
 
 function HeaderMenuRight() {
   return (
     <div className="ms-auto grid shrink-0 grid-cols-4 items-center gap-2 text-gray-700 xs:gap-3 xl:gap-4">
-      <MessagesDropdown>
+      {/* <MessagesDropdown>
         <ActionIcon
           aria-label="Messages"
           variant="text"
@@ -48,7 +49,9 @@ function HeaderMenuRight() {
             className="absolute right-2.5 top-2.5 -translate-y-1/3 translate-x-1/2"
           />
         </ActionIcon>
-      </NotificationDropdown>
+      </NotificationDropdown> */}
+
+      <ThemeSwitcher />
       <ProfileMenu />
     </div>
   );

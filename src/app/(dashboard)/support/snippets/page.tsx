@@ -2,7 +2,6 @@ import { PiChartLineUp } from 'react-icons/pi';
 import { routes } from '@/config/routes';
 import { Button } from '@/components/ui/button';
 import PageHeader from '@/app/shared/page-header';
-import SnippetsTable from '@/app/shared/support/snippets/table';
 import HeaderAction from '../header-action';
 import { metaObject } from '@/config/site.config';
 
@@ -48,8 +47,6 @@ export default function SupportSnippetsPage() {
           Upgrade
         </Button>
       </div>
-
-      <SnippetsTable />
     </>
   );
 }

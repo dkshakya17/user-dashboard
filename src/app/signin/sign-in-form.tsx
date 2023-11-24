@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { SubmitHandler } from 'react-hook-form';
-import { Password } from '@/components/ui/password';
+import { PiArrowRightBold } from 'react-icons/pi';
 import { Checkbox } from '@/components/ui/checkbox';
-import { useMedia } from '@/hooks/use-media';
+import { Password } from '@/components/ui/password';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Form } from '@/components/ui/form';
@@ -14,14 +14,13 @@ import { Text } from '@/components/ui/text';
 import { routes } from '@/config/routes';
 import { loginSchema, LoginSchema } from '@/utils/validators/login.schema';
 
-const initialValues: LoginSchema = {
-  email: 'admin@admin.com',
-  password: 'admin',
-  rememberMe: true,
-};
+// const initialValues: LoginSchema = {
+//   email: 'admin@admin.com',
+//   password: 'admin',
+//   rememberMe: true,
+// };
 
 export default function SignInForm() {
-  const isMedium = useMedia('(max-width: 1200px)', false);
   //TODO: why we need to reset it here
   const [reset, setReset] = useState({});
 
@@ -35,62 +34,64 @@ export default function SignInForm() {
 
   return (
     <>
-      <Form<LoginSchema>
+      {/* <Form<LoginSchema>
         validationSchema={loginSchema}
+        resetValues={reset}
         onSubmit={onSubmit}
         useFormProps={{
-          mode: 'onChange',
           defaultValues: initialValues,
         }}
       >
         {({ register, formState: { errors } }) => (
-          <div className="space-y-5 lg:space-y-6">
+          <div className="space-y-5">
             <Input
               type="email"
-              size={isMedium ? 'lg' : 'xl'}
+              size="lg"
               label="Email"
               placeholder="Enter your email"
+              color="info"
               className="[&>label>span]:font-medium"
+              inputClassName="text-sm"
               {...register('email')}
               error={errors.email?.message}
             />
             <Password
               label="Password"
               placeholder="Enter your password"
-              size={isMedium ? 'lg' : 'xl'}
+              size="lg"
               className="[&>label>span]:font-medium"
+              inputClassName="text-sm"
+              color="info"
               {...register('password')}
               error={errors.password?.message}
             />
-            <div className="flex items-center justify-between pb-1">
+            <div className="flex items-center justify-between pb-2">
               <Checkbox
                 {...register('rememberMe')}
                 label="Remember Me"
+                color="info"
+                variant="flat"
                 className="[&>label>span]:font-medium"
               />
               <Link
                 href="#"
-                className="h-auto p-0 text-sm font-semibold text-gray-700 underline transition-colors hover:text-primary hover:no-underline"
+                className="h-auto p-0 text-sm font-semibold text-blue underline transition-colors hover:text-gray-900 hover:no-underline"
               >
-                Forgot Password?
+                Forget Password?
               </Link>
             </div>
-
-            <Button
-              className="w-full"
-              type="submit"
-              size={isMedium ? 'lg' : 'xl'}
-            >
-              Sign In
+            <Button className="w-full" type="submit" size="lg" color="info">
+              <span>Sign in</span>{' '}
+              <PiArrowRightBold className="ms-2 mt-0.5 h-5 w-5" />
             </Button>
           </div>
         )}
-      </Form>
-      <Text className="mt-6 text-center text-[15px] leading-loose text-gray-500 md:mt-7 lg:mt-9 lg:text-base">
+      </Form> */}
+      <Text className="mt-6 text-center leading-loose text-gray-500 lg:mt-8 lg:text-start">
         Don’t have an account?{' '}
         <Link
           href={routes.signUp}
-          className="font-semibold text-gray-700 transition-colors hover:text-primary"
+          className="font-semibold text-gray-700 transition-colors hover:text-blue"
         >
           Sign Up
         </Link>

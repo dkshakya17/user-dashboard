@@ -43,11 +43,6 @@ import {
 // Note: do not add href in the label object, it is rendering as label
 export const menuItems = [
   {
-    name: 'Profile',
-    href: routes.profile,
-    icon: <PiUserCircleDuotone />,
-  },
-  {
     name: 'Welcome',
     href: routes.welcome,
     icon: <PiShootingStarDuotone />,
@@ -56,5 +51,10 @@ export const menuItems = [
     name: 'Coming soon',
     href: routes.comingSoon,
     icon: <PiRocketLaunchDuotone />,
+  },
+  {
+    name: 'Profile',
+    href: routes.profile,
+    icon: <PiUserCircleDuotone />,
   },
 ];
