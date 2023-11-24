@@ -102,7 +102,7 @@ function SearchBox({ onClose }: { onClose?: () => void }) {
           )}
         </>
 
-        {menuItemsFiltered.map((item, index) => {
+        {menuItemsFiltered.map((item: any, index) => {
           return (
             <Fragment key={item.name + '-' + index}>
               {item?.href ? (
