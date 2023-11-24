@@ -7,7 +7,7 @@ import StepCounter from '@/app/shared/multi-step/step-counter';
 import {
   useStepperTwo,
   stepTwoTotalSteps,
-} from '@/app/shared/multi-step/multi-step-2';
+} from '@/app/shared/multi-step/steps';
 import { siteConfig } from '@/config/site.config';
 
 interface FooterProps {

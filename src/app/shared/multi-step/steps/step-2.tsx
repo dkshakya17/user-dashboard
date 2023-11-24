@@ -6,12 +6,12 @@ import { atomWithStorage } from 'jotai/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import FormPart from '@/app/shared/multi-step/form-part';
-import { useStepperTwo } from '@/app/shared/multi-step/multi-step-2';
+import { useStepperTwo } from '@/app/shared/multi-step/steps';
 import SizeAndPricing, {
   sizeAndPricingSchema,
   sizeAndPricingValues,
 } from '@/app/shared/multi-step/size-pricing';
-import Footer from '@/app/multi-step/form-two/footer';
+import Footer from '@/app/signup/footer';
 
 const formStoreAtom = atomWithStorage(
   'multiStepFormOneStore',
