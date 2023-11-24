@@ -15,10 +15,10 @@ import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
 const pageHeader = {
   title: 'Icons',
   breadcrumb: [
-    {
-      href: routes.eCommerce.dashboard,
-      name: 'Home',
-    },
+    // {
+    //   href: routes.eCommerce.dashboard,
+    //   name: 'Home',
+    // },
     {
       name: 'Widgets',
     },
