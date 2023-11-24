@@ -1,5 +1,5 @@
-import Header from './header';
-
+import Header from '@/app/signup/header';
+import Footer from '@/app/signup/footer';
 export default function MultiStepLayoutOne({
   children,
 }: {
@@ -7,7 +7,7 @@ export default function MultiStepLayoutOne({
 }) {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       {children}
       {/* <Footer /> */}
     </div>

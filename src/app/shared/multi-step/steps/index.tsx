@@ -61,7 +61,7 @@ export default function MultiStepFormOne() {
   const Component = MAP_STEP_TO_COMPONENT[step];
 
   return (
-    <div className="flex min-h-screen justify-center py-20 md:items-center">
+    <div className="flex min-h-screen justify-center py-8 md:items-center">
       <div className="mt-8 w-full max-w-2xl  px-4 md:mt-0 lg:px-6">
         <Component />
       </div>

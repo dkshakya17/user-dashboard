@@ -51,7 +51,7 @@ export const BasicInfoSchema = z.object({
       message: 'This field is required',
     }),
   }),
-  propertyName: z.string().min(1, { message: 'Property Name is required' }),
+  propertyName: z.string().min(1, { message: 'Name is required' }),
   propertyType: z.string().min(1, { message: 'Property Type is required' }),
   constructionStatus: z
     .string()
@@ -79,36 +79,11 @@ export default function BasicInfo() {
   } = useFormContext();
   return (
     <div className="grid grid-cols-2 gap-x-5 gap-y-5 md:gap-y-7">
-      <div className="col-span-full">
-        <p className="mb-3 font-medium text-gray-900 dark:text-white">
-          Property For
-          <span className="text-red"> *</span>
-        </p>
-        <div className="flex gap-8 md:gap-16">
-          <Radio
-            className="m-0 "
-            label="Rent"
-            value="rent"
-            {...register('propertyFor')}
-          />
-          <Radio
-            className="m-0 "
-            label="Sell"
-            value="sell"
-            {...register('propertyFor')}
-          />
-        </div>
-        {!!errors.propertyFor?.message && (
-          <p role="alert" className="mt-1.5 text-xs text-red">
-            {errors.propertyFor?.message as string}
-          </p>
-        )}
-      </div>
       <Input
         type="text"
         labelClassName="font-medium text-gray-900 dark:text-white"
-        label="Property name"
-        placeholder="property name..."
+        label="Legal name (as per Aadhaar)"
+        placeholder="Enter Name (as per Aadhaar)..."
         className="col-span-2"
         {...register('propertyName')}
         error={errors.propertyName?.message as string}
@@ -174,32 +149,6 @@ export default function BasicInfo() {
         placeholder="address..."
         {...register('address')}
         error={errors.address?.message as string}
-      />
-      {/* <Controller
-        control={control}
-        name="productDescription"
-        render={({ field: { onChange, value } }) => (
-          <TextEditor
-            label="Product Description"
-            labelClassName="font-medium text-gray-900 dark:text-white mb-1.5"
-            className="col-span-full"
-            value={value}
-            onChange={onChange}
-          />
-        )}
-      /> */}
-      <Controller
-        control={control}
-        name="productDescription"
-        render={({ field: { onChange, value } }) => (
-          <QuillEditor
-            value={value}
-            onChange={onChange}
-            label="Product Description"
-            className="col-span-full"
-            labelClassName="font-medium text-gray-900 dark:text-white mb-1.5"
-          />
-        )}
       />
     </div>
   );
