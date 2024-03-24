@@ -4,7 +4,7 @@ import isEmpty from 'lodash/isEmpty';
 import isNumber from 'lodash/isNumber';
 import isString from 'lodash/isString';
 import { FieldHelperText } from 'rizzui';
-import { Listbox, Transition } from '@headlessui/react';
+import { Combobox, Listbox, Transition } from '@headlessui/react';
 import { ExtractProps } from '@/components/ui/table';
 import cn from '@/utils/class-names';
 import { PiCaretUpDown } from 'react-icons/pi';
@@ -179,7 +179,7 @@ export type SelectOption = {
 };
 
 export type SelectBoxProps<Option> = Omit<
-  ExtractProps<typeof Listbox>,
+  ExtractProps<typeof Combobox>,
   'color'
 > & {
   /** Options for select */

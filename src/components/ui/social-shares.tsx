@@ -2,29 +2,21 @@ import {
   PiFacebookLogoFill,
   PiInstagramLogoFill,
   PiTwitterLogoFill,
+  PiLinkedinLogoFill,
   PiYoutubeLogoFill,
 } from 'react-icons/pi';
+import { FaSquareXTwitter } from 'react-icons/fa6';
 
 const socialData = [
   {
-    title: 'Facebook',
-    icon: <PiFacebookLogoFill className="h-auto w-4" />,
-    link: 'https://facebook.com',
+    title: 'Linkedin',
+    icon: <PiLinkedinLogoFill className="h-auto w-4 text-white" />,
+    link: 'https://www.linkedin.com/company/soul-ai/',
   },
   {
     title: 'Twitter',
-    icon: <PiTwitterLogoFill className="h-auto w-4" />,
-    link: 'https://twitter.com',
-  },
-  {
-    title: 'Instagram',
-    icon: <PiInstagramLogoFill className="h-auto w-4" />,
-    link: 'https://instagram.com',
-  },
-  {
-    title: 'Youtube',
-    icon: <PiYoutubeLogoFill className="h-auto w-4" />,
-    link: 'https://youtube.com',
+    icon: <FaSquareXTwitter className="h-auto w-4 text-white" />,
+    link: 'https://twitter.com/deepprogrammer_AI',
   },
 ];
 
@@ -37,7 +29,7 @@ export default function SocialItems() {
           href={item.link}
           rel="norefferer"
           target="_blank"
-          className="social-btn-shadow inline-block rounded-full bg-white p-3 text-gray-500 transition-all duration-300 hover:text-gray-1000 dark:bg-gray-100 dark:text-gray-700 dark:hover:text-gray-1000"
+          className="social-btn-shadow dark:hover:text-white-1000 dark:text-white-700 hover:text-white-1000 dark:bg-white-100 text-white-500 inline-block rounded-full bg-primary p-3 transition-all duration-300"
         >
           {item.icon}
         </a>

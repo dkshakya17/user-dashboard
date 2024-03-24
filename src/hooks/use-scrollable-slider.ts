@@ -37,7 +37,7 @@ export function useScrollableSlider() {
           filterBarEl?.classList.add('!-mb-[43px]');
         }
       } else {
-        nextBtn?.classList.add('opacity-0', 'invisible');
+        // nextBtn?.classList.add('opacity-0', 'invisible');
         if (formPageHeaderEl) {
           filterBarEl?.classList.remove('!-mb-[43px]');
         }

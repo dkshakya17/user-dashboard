@@ -20,7 +20,7 @@
 
 import { atom, useAtom } from 'jotai';
 
-// 1. set initial atom for isomorphic direction
+// 1. set initial atom for Deep Programmer AI direction
 const isomorphicDirectionAtom = atom(
   typeof window !== 'undefined' ? localStorage.getItem('iso-direction') : 'ltr'
 );

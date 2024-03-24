@@ -12,33 +12,25 @@ import { LAYOUT_OPTIONS } from '@/config/enums';
 
 const menuItems = [
   {
-    label: 'My Details',
-    value: '/forms/profile-settings',
+    label: 'Basic Details',
+    value: '/profile/basic-details',
   },
-  {
-    label: 'Profile',
-    value: '/forms/profile-settings/profile',
-  },
-  {
-    label: 'Password',
-    value: '/forms/profile-settings/password',
-  },
-  {
-    label: 'Team',
-    value: '/forms/profile-settings/team',
-  },
-  {
-    label: 'Billing',
-    value: '/forms/profile-settings/billing',
-  },
-  {
-    label: 'Notifications',
-    value: '/forms/profile-settings/notification',
-  },
-  {
-    label: 'Integrations',
-    value: '/forms/profile-settings/integration',
-  },
+  // {
+  //   label: 'Educational Info',
+  //   value: '/profile/education',
+  // },
+  // {
+  //   label: 'Skills',
+  //   value: '/profile/skills',
+  // },
+  // {
+  //   label: 'Experience',
+  //   value: '/profile',
+  // },
+  // {
+  //   label: 'Diversity',
+  //   value: '/profile/diversity',
+  // },
 ];
 
 export default function ProfileSettingsNav() {
@@ -52,9 +44,7 @@ export default function ProfileSettingsNav() {
     scrollToTheLeft,
   } = useScrollableSlider();
   return (
-    <div
-      className="sticky z-20 -mx-4 -mt-4 border-b border-gray-200 bg-white px-4 py-0 font-medium text-gray-500 dark:bg-gray-50 sm:-mt-2 md:-mx-5 md:px-5 lg:-mx-8 lg:mt-0 lg:px-8 xl:-mx-6 xl:px-6 2xl:top-20 3xl:-mx-[33px] 3xl:px-[33px] 4xl:-mx-10 4xl:px-10"
-    >
+    <div className="sticky z-20 -mx-4 -mt-4 border-b border-gray-200 bg-white px-4 py-0 font-medium text-gray-500 dark:bg-gray-50 sm:-mt-2 md:-mx-5 md:px-5 lg:-mx-8 lg:mt-0 lg:px-8 xl:-mx-6 xl:px-6 2xl:top-20 3xl:-mx-[33px] 3xl:px-[33px] 4xl:-mx-10 4xl:px-10">
       <div className="relative flex items-center overflow-hidden">
         <Button
           title="Prev"

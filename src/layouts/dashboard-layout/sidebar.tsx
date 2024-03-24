@@ -10,9 +10,22 @@ import { PiCaretDownBold } from 'react-icons/pi';
 import SimpleBar from '@/components/ui/simplebar';
 import { menuItems } from './menu-items';
 import Logo from '@/components/logo';
+import { IoIosHelpCircle } from 'react-icons/io';
+import { HiDocumentCheck } from 'react-icons/hi2';
+import { PiUserCircleDuotone } from 'react-icons/pi';
+import { RiCommunityFill } from 'react-icons/ri';
+import { useModal } from '@/app/shared/modal-views/use-modal';
+import CommnunityFaq from '@/app/shared/Faqs/community-faq';
+import { useAtom } from 'jotai';
+import mixpanel from 'mixpanel-browser';
+import { userDetailsAtom } from '@/app/shared/auth-layout/auth-wrapper';
+import { MdPrivacyTip } from 'react-icons/md';
 
 export default function Sidebar({ className }: { className?: string }) {
   const pathname = usePathname();
+  const { openModal } = useModal();
+  const [UserDetail, setUserDetail] = useAtom(userDetailsAtom);
+
   return (
     <aside
       className={cn(
@@ -21,7 +34,7 @@ export default function Sidebar({ className }: { className?: string }) {
       )}
     >
       <div className="sticky top-0 z-40 bg-gray-0/10 px-6 pb-5 pt-5 dark:bg-gray-100/5 2xl:px-8 2xl:pt-6">
-        <Link href={'/'} aria-label="Site Logo">
+        <Link href={'/dashboard'} aria-label="Site Logo">
           <Logo className="max-w-[155px]" />
         </Link>
       </div>
@@ -87,6 +100,14 @@ export default function Sidebar({ className }: { className?: string }) {
                               <Link
                                 href={dropdownItem?.href}
                                 key={dropdownItem?.name + index}
+                                onFocus={() => {
+                                  mixpanel.track(dropdownItem?.name, {
+                                    soul_id: UserDetail.soul_id,
+                                    subcategory: 'navbar',
+                                    category: 'post_login',
+                                    type: 'api_call',
+                                  });
+                                }}
                                 className={cn(
                                   'mx-3.5 mb-0.5 flex items-center rounded-md px-3.5 py-2 font-medium capitalize last-of-type:mb-1 lg:last-of-type:mb-2 2xl:mx-5',
                                   isChildActive
@@ -117,6 +138,7 @@ export default function Sidebar({ className }: { className?: string }) {
                             ? 'before:top-2/5 text-primary before:absolute before:-start-3 before:block before:h-4/5 before:w-1 before:rounded-ee-md before:rounded-se-md before:bg-primary 2xl:before:-start-5'
                             : 'text-gray-700 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-700/90'
                         )}
+                        target={item?.target}
                       >
                         {item?.icon && (
                           <span
@@ -148,8 +170,89 @@ export default function Sidebar({ className }: { className?: string }) {
               </Fragment>
             );
           })}
+          <Link
+            href="#"
+            className={cn(
+              'group relative mx-3 my-0.5 flex items-center rounded-md px-3 py-2 font-medium capitalize text-gray-700 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-700/90 lg:my-1 2xl:mx-5 2xl:my-2'
+            )}
+            onClick={() => {
+              openModal({
+                view: <CommnunityFaq />,
+                customSize: '720px',
+              });
+              mixpanel.track('ai_enthusiasts_community', {
+                soul_id: UserDetail.soul_id,
+                subcategory: 'navbar',
+                category: 'post_login',
+                type: 'in_page',
+              });
+            }}
+          >
+            <RiCommunityFill className="me-2 inline-flex h-5 w-5 items-center justify-center rounded-md text-gray-800 dark:text-gray-500 dark:group-hover:text-gray-700 [&>svg]:h-[19px] [&>svg]:w-[19px]" />{' '}
+            AI Enthusiasts Community
+          </Link>
         </div>
       </SimpleBar>
+      <div className="absolute bottom-2 left-0 right-0 bg-gray-0 px-0 py-0 pb-3 dark:bg-gray-50">
+        <div className="w-full px-0 py-0">
+          <Link
+            href="/profile/basic-details"
+            className={cn(
+              'group relative mx-3 my-0.5 flex items-center rounded-md px-3 py-2 font-medium capitalize text-gray-700 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-700/90 lg:my-1 2xl:mx-5 2xl:my-2'
+            )}
+            onClick={() => {
+              mixpanel.track('profile', {
+                soul_id: UserDetail.soul_id,
+                subcategory: 'navbar',
+                category: 'post_login',
+                type: 'api_call',
+              });
+            }}
+          >
+            <PiUserCircleDuotone className="me-2 inline-flex h-5 w-5 items-center justify-center rounded-md text-gray-800 dark:text-gray-500 dark:group-hover:text-gray-700 [&>svg]:h-[19px] [&>svg]:w-[19px]" />{' '}
+            Profile
+          </Link>
+          {/* <Link
+            href="https://wa.link/8rejti"
+            className={cn(
+              'group relative mx-3 my-0.5 flex items-center rounded-md px-3 py-2 font-medium capitalize text-gray-700 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-700/90 lg:my-1 2xl:mx-5 2xl:my-2'
+            )}
+            target="_blank"
+          >
+            <IoIosHelpCircle className="me-2 inline-flex h-5 w-5 items-center justify-center rounded-md text-gray-800 dark:text-gray-500 dark:group-hover:text-gray-700 [&>svg]:h-[19px] [&>svg]:w-[19px]" />{' '}
+            Need Help?{' '}
+          </Link> */}
+          <Link
+            href="https://www.deepprogrammer.in/terms-of-service"
+            target="_blank"
+            className={cn(
+              'group relative mx-3 my-0.5 flex items-center rounded-md px-3 py-2 font-medium capitalize text-gray-700 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-700/90 lg:my-1 2xl:mx-5 2xl:my-2'
+            )}
+            onClick={() => {
+              mixpanel.track('terms_and_conditions', {
+                soul_id: UserDetail.soul_id,
+                subcategory: 'navbar',
+                category: 'post_login',
+                type: 'api_call',
+              });
+            }}
+          >
+            <HiDocumentCheck className="me-2 inline-flex h-5 w-5 items-center justify-center rounded-md text-gray-800 dark:text-gray-500 dark:group-hover:text-gray-700 [&>svg]:h-[19px] [&>svg]:w-[19px]" />{' '}
+            Terms of Service
+          </Link>
+
+          <Link
+            href="https://www.deepprogrammer.in/privacy-policy"
+            target="_blank"
+            className={cn(
+              'group relative mx-3 my-0.5 flex items-center rounded-md px-3 py-2 font-medium capitalize text-gray-700 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-700/90 lg:my-1 2xl:mx-5 2xl:my-2'
+            )}
+          >
+            <MdPrivacyTip className="me-2 inline-flex h-5 w-5 items-center justify-center rounded-md text-gray-800 dark:text-gray-500 dark:group-hover:text-gray-700 [&>svg]:h-[19px] [&>svg]:w-[19px]" />{' '}
+            Privacy Policy
+          </Link>
+        </div>
+      </div>
     </aside>
   );
 }

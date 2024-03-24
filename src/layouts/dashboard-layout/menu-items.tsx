@@ -12,6 +12,7 @@ import {
   PiFeatherDuotone,
   PiChartLineUpDuotone,
   // PiImageDuotone,
+  PiCurrencyCircleDollarDuotone,
   PiMapPinLineDuotone,
   PiUserGearDuotone,
   PiBellSimpleRingingDuotone,
@@ -38,23 +39,47 @@ import {
   PiMagicWandDuotone,
   PiCalendarPlusDuotone,
   PiEnvelopeDuotone,
+  PiProjectorScreenDuotone,
 } from 'react-icons/pi';
-
+import { RiCommunityFill } from 'react-icons/ri';
+import { AiTwotoneHome } from 'react-icons/ai';
+import { HiOutlineDocumentSearch } from 'react-icons/hi';
 // Note: do not add href in the label object, it is rendering as label
 export const menuItems = [
   {
-    name: 'Welcome',
-    href: routes.welcome,
-    icon: <PiShootingStarDuotone />,
+    name: 'Home',
+    href: '/dashboard',
+    icon: <AiTwotoneHome />,
   },
+  // {
+  //   name: 'Coming soon',
+  //   href: routes.comingSoon,
+  //   icon: <PiRocketLaunchDuotone />,
+  // },
+  // {
+  //   name: 'My Profile',
+  //   href: routes.comingSoon,
+  //   icon: <PiUserCircleDuotone />,
+  // },
   {
-    name: 'Coming soon',
+    name: 'Projects',
     href: routes.comingSoon,
-    icon: <PiRocketLaunchDuotone />,
+    icon: <PiProjectorScreenDuotone />,
   },
   {
-    name: 'Profile',
-    href: routes.profile,
-    icon: <PiUserCircleDuotone />,
+    name: 'Payments',
+    href: routes.comingSoon,
+    icon: <PiCurrencyCircleDollarDuotone />,
   },
+  {
+    name: 'Assessments',
+    href: routes.comingSoon,
+    icon: <HiOutlineDocumentSearch />,
+  },
+  // {
+  //   name: 'Community',
+  //   href: 'https://discord.gg/R9qTVuqJYy',
+  //   icon: <RiCommunityFill />,
+  //   target: '_blank',
+  // },
 ];

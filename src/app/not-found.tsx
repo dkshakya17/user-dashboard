@@ -9,7 +9,7 @@ import NotFoundImg from '@public/not-found.png';
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F8FAFC]">
+    <div className="flex min-h-full flex-col">
       <div className="sticky top-0 z-40 flex justify-center py-5 backdrop-blur-lg lg:backdrop-blur-none xl:py-10">
         <Link href="/">
           <Image
@@ -32,14 +32,14 @@ export default function NotFound() {
             as="h1"
             className="text-[22px] font-bold leading-normal text-gray-1000 lg:text-3xl"
           >
-            Sorry, the page not found
+            404 <br /> We couldn’t find the page you’re looking for.
           </Title>
-          <p className="mt-3 text-sm leading-loose text-gray-500 lg:mt-6 lg:text-base lg:leading-loose">
+          {/* <p className="mt-3 text-sm leading-loose text-gray-500 lg:mt-6 lg:text-base lg:leading-loose">
             We have been spending long hours in order to launch our new website.
             Join our
             <br className="hidden sm:inline-block" />
             mailing list or follow us on Facebook for get latest update.
-          </p>
+          </p> */}
           <Link href={'/'}>
             <Button
               tag="span"
@@ -53,7 +53,7 @@ export default function NotFound() {
           </Link>
         </div>
       </div>
-      <SocialItems />
+      {/* <SocialItems /> */}
     </div>
   );
 }

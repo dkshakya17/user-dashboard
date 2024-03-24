@@ -17,7 +17,7 @@ export function CustomTooltip({ active, payload, label, className }: any) {
         className
       )}
     >
-      <Text className="label mb-0.5 block bg-gray-100 p-2 px-2.5 text-center font-lexend text-xs font-semibold capitalize text-gray-600 dark:bg-gray-200/60 dark:text-gray-700">
+      <Text className="label mb-0.5 block bg-gray-100 p-2 px-2.5 text-center font-poppins text-xs font-semibold capitalize text-gray-600 dark:bg-gray-200/60 dark:text-gray-700">
         {label}
       </Text>
       <div className="px-3 py-1.5 text-xs">

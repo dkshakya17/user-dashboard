@@ -1,16 +1,31 @@
-import ProfileHeader from '@/app/shared/profile/profile-header';
-import ProfileDetails from '@/app/shared/profile/profile-details';
+import { routes } from '@/config/routes';
+import PersonalExperience from '@/app/shared/account-settings/experience';
+import PageHeader from '@/app/shared/page-header';
+import ProfileSettingsNav from '@/app/shared/account-settings/navigation';
 import { metaObject } from '@/config/site.config';
+import ProfileBasicDetails from '@/app/shared/account-settings/personal-info';
 
 export const metadata = {
-  ...metaObject('Profile'),
+  ...metaObject('Profile Settings'),
 };
 
-export default function ProfilePage() {
-  return (
-    <div className="@container">
-      <ProfileHeader />
-      <ProfileDetails />
-    </div>
-  );
+// const pageHeader = {
+//   title: 'Account Settings',
+//   breadcrumb: [
+//     // {
+//     //   href: routes.eCommerce.dashboard,
+//     //   name: 'E-Commerce',
+//     // },
+//     // {
+//     //   href: routes.forms.profileSettings,
+//     //   name: '',
+//     // },
+//     {
+//       name: 'Profile',
+//     },
+//   ],
+// };
+
+export default function ProfileSettingsFormPage() {
+  return <ProfileBasicDetails />;
 }

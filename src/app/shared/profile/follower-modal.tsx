@@ -38,7 +38,7 @@ function FollowerRow({ row }: FollowerRowProps) {
     <div className="flex items-center justify-between pb-3 pt-2 lg:pb-5 lg:first:pt-4">
       <div className="flex items-center gap-2">
         <Avatar size="lg" name={row.name} src={row.avatar} />
-        <Text className="font-lexend font-medium capitalize text-gray-900">
+        <Text className="font-poppins font-medium capitalize text-gray-900">
           {row.name}
         </Text>
       </div>

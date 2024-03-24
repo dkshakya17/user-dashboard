@@ -7,7 +7,7 @@ export default function Logo({ iconOnly = false, ...props }: IconProps) {
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="126"
+        width="100%"
         height="42"
         fill="none"
         viewBox={`0 0 ${iconOnly ? '48 26' : '155 28'}`}

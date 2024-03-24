@@ -4,14 +4,17 @@ import Link from 'next/link';
 import { routes } from '@/config/routes';
 import cn from '@/utils/class-names';
 import Image from 'next/image';
+import { Text } from '@/components/ui/text';
 import { usePathname } from 'next/navigation';
 import { Title } from '@/components/ui/text';
 import { Button } from '@/components/ui/button';
 import { PiArrowLineRight, PiUserCirclePlus } from 'react-icons/pi';
+import { useStepperTwo } from '@/app/shared/multi-step/steps';
 import { FcGoogle } from 'react-icons/fc';
 import OrSeparation from './or-separation';
 import { siteConfig } from '@/config/site.config';
 import { BsFacebook } from 'react-icons/bs';
+import { FaWhatsapp } from 'react-icons/fa6';
 
 function AuthNavLink({
   href,
@@ -54,57 +57,71 @@ export default function AuthWrapperSignUp({
   className?: string;
 }) {
   return (
-    <div className="flex min-h-screen w-full flex-col justify-between">
+    <div className="flex min-h-full w-full flex-col justify-between">
       <AuthHeader />
 
-      <div className="flex w-full flex-col justify-center px-5">
+      <div className="flex w-full flex-col justify-center px-5 py-0 sm:py-8">
         <div
           className={cn(
-            'mx-auto w-full max-w-md py-8 md:max-w-lg lg:max-w-xl 2xl:pb-8 2xl:pt-2',
+            'mx-auto w-full max-w-md py-8 md:max-w-lg lg:max-w-xl 2xl:pb-8 ',
             className
           )}
         >
-          <div className="flex flex-col items-center">
-            {/* <Link href={'/'} className="mb-7 inline-block max-w-[64px] lg:mb-9">
-              <Image src={siteConfig.icon} alt={siteConfig.title} />
-            </Link> */}
+          {/* <div className="flex flex-col items-center">
             <Title
               as="h2"
               className="mb-7 text-center text-[28px] font-bold leading-snug md:text-3xl md:!leading-normal lg:mb-1 lg:text-4xl"
             >
               {title}
             </Title>
-          </div>
+          </div> */}
           {children}
         </div>
       </div>
 
-      <AuthFooter />
+      {/* <AuthFooter /> */}
     </div>
   );
 }
 
 function AuthHeader() {
+  const { resetStepper } = useStepperTwo();
+
+  const resetForm = () => {
+    console.log('data');
+    resetStepper();
+  };
   return (
-    <header className="flex items-center justify-between p-4 lg:px-16 lg:py-6 2xl:px-24">
-      <Link href={'/'}>
+    <header className="static top-0 z-10 flex w-full items-center  justify-between bg-white p-4 dark:bg-transparent sm:fixed lg:px-16 lg:py-6 2xl:px-24">
+      <Link href="https://www.deepprogrammer.in/" target="_blank">
         <Image
           src={siteConfig.logo}
           alt={siteConfig.title}
-          className="dark:invert"
+          className="dark"
           priority
         />
       </Link>
       <div className="flex items-center space-x-2 md:space-x-4">
-        <p>Already have an account ?</p>
-        {/* <AuthNavLink href={routes.signIn}>
-          <PiArrowLineRight className="h-4 w-4" />
-          <span>Login</span>
-        </AuthNavLink> */}
+        {/* <p>Have an account ?</p>
         <AuthNavLink href={routes.signIn}>
-          <PiArrowLineRight className="h-4 w-4" />
-          <span>Login</span>
-        </AuthNavLink>
+          <button
+            onClick={resetForm}
+            className="flex flex items-center space-x-1"
+          >
+            <PiArrowLineRight className="h-4 w-4" />
+            <span>Login</span>
+          </button>
+        </AuthNavLink> */}
+        <Text className="leading-loose">
+          <Link
+            href="https://wa.me/9019945922"
+            className="flex items-center gap-1 text-primary transition-colors"
+            target="_blank"
+          >
+            <FaWhatsapp className="h-4 w-4 text-primary" />
+            Need Help ?{' '}
+          </Link>
+        </Text>
       </div>
     </header>
   );

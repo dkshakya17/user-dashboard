@@ -40,13 +40,13 @@
     /* primary/brand colors */
     /* ----------------------------------- */
     /* For rgb(215 227 254 / <alpha-value>) = #D7E3FE */
-    --primary-lighter: 215 227 254;
+    --primary-lighter: 108 99 255;
     /* For rgb(96 142 251 / <alpha-value>) = #608EFB */
     --primary-light: 96 142 251;
     /* For rgb(56 114 250 / <alpha-value>) = #3872FA */
-    --primary-default: 56 114 250;
+    --primary-default: 108 99 255;
     /* For rgb(29 88 216 / <alpha-value>) = #1d58d8 */
-    --primary-dark: 29 88 216;
+    --primary-dark: 164 123 195;
 
     /* ----------------------------------- */
     /* secondary colors */
@@ -200,7 +200,7 @@
   h4,
   h5,
   h6 {
-    @apply font-lexend font-bold text-gray-900 dark:text-gray-700;
+    @apply font-poppins font-bold text-gray-900 dark:text-gray-700;
   }
 
   h1 {
@@ -359,7 +359,7 @@ select:-webkit-autofill:focus {
 /* ?React Datepicker Styling */
 /* ................................................... */
 .react-datepicker-popper .react-datepicker {
-  @apply bg-gray-0 font-inter text-gray-600 dark:border-gray-300 dark:bg-gray-100;
+  @apply bg-gray-0 font-poppins text-gray-600 dark:border-gray-300 dark:bg-gray-100;
 }
 
 input[type='checkbox']:checked ~ svg {
@@ -392,7 +392,7 @@ input[type='checkbox']:checked ~ svg {
 
 /* header */
 .react-datepicker .react-datepicker__header {
-  @apply border-b-gray-0 bg-gray-0 font-lexend dark:border-transparent dark:bg-gray-100;
+  @apply border-b-gray-0 bg-gray-0 font-poppins dark:border-transparent dark:bg-gray-100;
 }
 
 /* current month name in header */
@@ -773,7 +773,7 @@ td.rc-table-cell-fix-right {
 }
 
 .react-quill .ql-container {
-  @apply font-inter;
+  @apply font-poppins;
 }
 
 .react-quill .ql-container.ql-snow {
@@ -988,7 +988,7 @@ div[style='z-index: 1000001;'],
 }
 
 .pac-item {
-  @apply px-3 py-1.5 font-inter;
+  @apply px-3 py-1.5 font-poppins;
 }
 
 /* google location search auto complete  */
@@ -1142,7 +1142,7 @@ div[style='z-index: 1000001;'],
 }
 
 .rbc-toolbar-label {
-  @apply font-lexend text-xl font-medium text-gray-900 dark:text-white;
+  @apply font-poppins text-xl font-medium text-gray-900 dark:text-white;
 }
 
 .rbc-agenda-view {
@@ -1206,4 +1206,8 @@ div[style='z-index: 1000001;'],
   .swiper-pagination
   span.swiper-pagination-bullet-active {
   @apply !w-4 !bg-gray-400;
+}
+
+.souai-button {
+  @apply bg-primary;
 }

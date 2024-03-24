@@ -15,7 +15,7 @@ export default function StepCounter({
     <span
       className={cn('text-xs font-medium text-gray-500 lg:text-sm', className)}
     >
-      Step {currentStep} of {totalSteps}
+      Step {currentStep} of {totalSteps} 
     </span>
   );
 }

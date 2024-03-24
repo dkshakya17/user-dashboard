@@ -29,9 +29,9 @@ export default function FormPart({
           </h3>
         )}
 
-        <p className="mt-1 text-xs leading-5 text-gray-500 md:mt-2 md:text-sm">
+        {/* <p className="mt-1 text-xs leading-5 text-gray-500 md:mt-2 md:text-sm">
           {description}
-        </p>
+        </p> */}
       </header>
       {children}
     </section>

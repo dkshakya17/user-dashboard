@@ -1,20 +1,27 @@
 import dynamic from 'next/dynamic';
 import { Toaster } from 'react-hot-toast';
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from '@/app/api/auth/[...nextauth]/auth-options';
-import AuthProvider from '@/app/api/auth/[...nextauth]/auth-provider';
 import GlobalDrawer from '@/app/shared/drawer-views/container';
 import GlobalModal from '@/app/shared/modal-views/container';
 import { ThemeProvider } from '@/app/shared/theme-provider';
 import { siteConfig } from '@/config/site.config';
-import { inter, lexendDeca } from '@/app/fonts';
+import { poppins } from '@/app/fonts';
 import cn from '@/utils/class-names';
+import mixpanel from 'mixpanel-browser';
+
+// Initialize Mixpanel with your project token
+mixpanel.init('38568fc30a091b29b71e5a3434a51bb4');
+
+// Track an initial event, for example, 'App Loaded'
+mixpanel.track('App Loaded');
+
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const NextProgress = dynamic(() => import('@/components/next-progress'), {
   ssr: false,
 });
 // styles
 import '@/app/globals.css';
+import { GoogleClientID } from '@/config/constants';
 
 export const metadata = {
   title: siteConfig.title,
@@ -26,7 +33,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerSession(authOptions);
+  // const session = await getServerSession(authOptions);
   return (
     <html
       lang="en"
@@ -37,17 +44,22 @@ export default async function RootLayout({
       <body
         // to prevent any warning that is caused by third party extensions like Grammarly
         suppressHydrationWarning
-        className={cn(inter.variable, lexendDeca.variable, 'font-inter')}
+        className={cn(poppins.variable, 'font-poppins')}
       >
-        <AuthProvider session={session}>
+        <GoogleOAuthProvider clientId={GoogleClientID}>
           <ThemeProvider>
-            <NextProgress />
+            {/* <NextProgress /> */}
             {children}
             <Toaster />
             <GlobalDrawer />
             <GlobalModal />
           </ThemeProvider>
-        </AuthProvider>
+        </GoogleOAuthProvider>
+        {/* <script src="https://tally.so/widgets/embed.js"></script> */}
+        {/* <script
+          id="respondio__widget"
+          src="https://cdn.respond.io/webchat/widget/widget.js?cId=c7ae8faee642e54cdfbe234c23622e5"
+        ></script> */}
       </body>
     </html>
   );

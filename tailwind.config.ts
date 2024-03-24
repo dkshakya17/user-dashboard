@@ -9,7 +9,7 @@ export default {
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     screens: {
-      xs: '480px',
+      xs: '320px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -72,8 +72,7 @@ export default {
         },
       },
       fontFamily: {
-        inter: ['var(--font-inter)'],
-        lexend: ['var(--font-lexend)'],
+        poppins: ['var(--font-poppins)'],
       },
       // required these animations for the Loader component
       animation: {

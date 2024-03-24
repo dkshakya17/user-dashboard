@@ -1,7 +1,7 @@
 'use server';
 
 import { render } from '@react-email/render';
-import { sendEmail } from '@/utils/email';
+// import { sendEmail } from '@/utils/email';
 // import AccountConfirmationEmail from '@/email-templates/account-confirmation';
 
 export const sendAccountConfirmationEmail = async (data: { email: string }) => {

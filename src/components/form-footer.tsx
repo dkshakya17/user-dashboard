@@ -35,6 +35,7 @@ export default function FormFooter({
       </Button>
       <Button
         type="submit"
+        color="primary"
         isLoading={isLoading}
         className="w-full @xl:w-auto dark:bg-gray-100 dark:text-white dark:active:bg-gray-100"
       >

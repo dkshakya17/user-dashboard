@@ -21,7 +21,7 @@ export default function AvatarCard({
     <figure className={cn('flex items-center gap-3', className)}>
       <Avatar name={name} src={src} {...avatarProps} />
       <figcaption className="grid gap-0.5">
-        <Text className="font-lexend text-sm font-medium text-gray-900 dark:text-gray-700">
+        <Text className="font-poppins text-sm font-medium text-gray-900 dark:text-gray-700">
           {name}
         </Text>
         {description && (
